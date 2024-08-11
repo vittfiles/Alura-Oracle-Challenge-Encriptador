@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alura Oracle Challenge Encriptador</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body class="body">
+    <header class="header"><img width="32" height="48" src="img/logo.jpeg" alt=""></header>
+    <main class="main">
+      <section class="main__encrypt">
+        <textarea
+          class="text-area"
+          name="text"
+          id="text"
+          placeholder="Ingrese el texto aquí"
+        ></textarea>
+        <div class="small-info">
+          <svg
+            class="alert-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24l0 112c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-112c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+            />
+          </svg>
+          <span class="small-info__text"
+            >Solo letras minúsculas y sin acento</span
+          >
+        </div>
+        <div class="button-section">
+          <button class="button button--fill" id="encrypt">Encriptar</button>
+          <button class="button" id="decrypt">Desencriptar</button>
+        </div>
+      </section>
+      <section class="main__decrypt">
+        <div id="info" class="info">
+          <img src="img/person.jpeg" alt="image of a person" />
+          <h3>Ningún mensaje fue encontrado</h3>
+          <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+        </div>
+        <div id="div-result" class="main__decrypt__result-div hidden">
+          <p class="result" id="result"></p>
+          <button class="button" id="copy_text">Copiar</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
