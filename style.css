@@ -155,6 +155,7 @@
 }
 
 .main__decrypt__result-div {
+  position: relative;
   align-self: stretch;
   width: 100%;
   display: flex;
@@ -163,10 +164,48 @@
 }
 
 .result {
+  border: none;
   flex: 1;
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
   text-align: left;
   font-size: 1.5rem;
   color: var(--color-gray-400);
+}
+
+.result:focus {
+  outline: none;
+}
+
+.toast {
+  display: none;
+  width: 100%;
+  bottom: 70px;
+  position: absolute;
+  opacity: 0;
+  padding: 1.4rem 1rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  color: var(--color-gray-400);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.toast.fade {
+  display: block;
+  animation: 2s linear fade-in-out;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .hidden {
@@ -210,5 +249,9 @@
   }
   .main__decrypt img {
     display: block;
+  }
+
+  .toast {
+    bottom: 50%;
   }
 }

@@ -51,22 +51,30 @@ function init() {
 
   let divResultElement = document.getElementById("div-result");
   let infoElement = document.getElementById("info");
+  let toastElement = document.getElementById("toast");
+
+  document.addEventListener("animationend", (e) => {
+    if (e.target.matches(".toast.fade")) {
+      e.target.classList.remove("fade");
+    }
+  });
 
   document.addEventListener("click", (e) => {
     if (e.target.matches("#encrypt")) {
       if (!isUppercase(textElement.value)) {
-        resultElement.innerText = encrypt(textElement.value);
+        resultElement.value = encrypt(textElement.value);
         textElement.value = "";
         divResultElement.classList.remove("hidden");
         infoElement.classList.add("hidden");
       }
     } else if (e.target.matches("#decrypt")) {
       if (!isUppercase(textElement.value)) {
-        resultElement.innerText = decrypt(textElement.value);
+        resultElement.value = decrypt(textElement.value);
         textElement.value = "";
       }
     } else if (e.target.matches("#copy_text")) {
-      navigator.clipboard.writeText(resultElement.innerText);
+      navigator.clipboard.writeText(resultElement.value);
+      toastElement.classList.add("fade");
     }
   });
 }
